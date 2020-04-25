@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script type="text/javascript">
+        /**
+         * 实际问题：
+         *      在真实开发中，往往有使用他人提供的对象中的属性和方法情况，
+         *      但大多数情况都是我们不清楚对象包含哪些属性，
+         *      使用for ... in 语句
+         * 语法:
+         *      for (var 变量 in 对象){
+         *          
+         *      }
+        */
+            var obj = {
+                name: "孙悟空",
+                gender: "男",
+                adress: "花果山"
+            }
+            for (var n in obj){
+                console.log("属性名：" + n + ", 属性值: " + obj[n]);
+            };
+        </script>
+    </head>
+    <body></body>
+</html>

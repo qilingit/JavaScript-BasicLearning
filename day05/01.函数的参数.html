@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script type="text/javascript">
+            /**
+             * 调用函数时解析器不会检查实参的类型
+             * 所以要注意，是否有可能会接收到非法的参数，如果有可能，则需要对参数进行类型的检查
+             * 函数的实参可以是任意数据类型
+            */
+           function sum (a, b) {
+               console.log(a + b);
+           }
+           //输出123hello
+           /*sum(123, "hello")*/
+
+           /**
+            * 调用函数时解析器也不会查检实参的数量
+            * 多余实参不会被赋值
+            * 如果实参数量少于形参的数量，则没有对应实参的形参将是Undefined
+           */
+           //输出468
+           sum(123, 345, "hello");
+           //输出NaN
+           sum(123);
+        </script>
+        
+    </head>
+    <body></body>
+</html>

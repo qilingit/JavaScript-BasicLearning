@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script type="text/javascript">
+            /**
+             * 强制类型转换主要指，将其他的数据类型，转换为：
+             *  String, Number, Boolean
+            */
+
+            /**
+             * 其他类型转换为String类型
+             * 方法一：
+             *  - 调用被转换数据类型的toString()方法
+             *  - 该方法不会影响到原变量的数据类型，它会将转换的结果返回
+             *  - null 和 undefined 没有toString()方法，会报错
+            */
+            var a = 123;
+            var b = a.toString();
+
+            a = a.toString();
+
+            /* a = true; 
+            a = a.toString() */
+
+            /* a = undefined;
+            a = a.toString(); */
+
+            /**
+                * 方法二:
+                *   调用String()函数，来将a转换成字符串
+            */
+            a = 123;
+            a = String(a);
+            
+            // string "null"
+            a = null;
+            a = String(a);
+
+            // string "undefined"
+            a = undefined;
+            a = String(a);
+
+           /* console.log(typeof a);
+           console.log(a); */
+
+           /**
+            * 将其他的数据类型转换成为Number
+            *   转换方式一：
+            *       使用Number函数
+            *           - 字符串 --> 数字会
+            *               1, 线数字直接转换
+            *               2，若字符串中有非数字内容，则转换成NaN
+            *               3，若字符串为空或者全是空格，则是0
+            *           - boolean --> 数字
+            *               true 为 1， false 为 0；
+            *           - null --> 数字 
+            *               0
+            *           - undefined --> 数字
+            *               NaN
+            *           
+            *           
+           */
+            a = "123";
+
+            a = "123.15";
+
+            a = "12d5";
+            
+            a = "";
+
+            a = true;
+
+            a = false;
+            a = Number(a);
+
+            a = null;
+            a = Number(a);
+
+            a = undefined;
+            a = Number(a);
+            /* console.log(typeof a);
+            console.log(a); */
+
+            /**
+             * 转换方式二：
+             *  - 这种方式专门用来对付字符串
+             *  - parseInt();
+             *  - parseFloat();
+            */
+            a = "123px4564";
+            // parseInt()可将一个字符串中的有效整数内容取出，然后转换为Number
+            a = parseInt(a); // 123 number
+
+            a = "123.4564px";
+            // parseFloat()可将一个字符串中的有效整数包括第一个小数点后的内容取出，然后转换为Number
+            a = parseFloat(a); // 123.456 number
+            /* console.log(typeof a);
+            console.log(a); */
+
+            /**
+             * 其他数据类型转换成Boolean
+             *  - 使用Boolean()函数
+             *      - 数字 --> 布尔
+             *          -- 除了0和NaN，其余的都是true
+             *      - 字符串 --> 布尔
+             *          -- 除了空串，其他都是true
+             *      - null和undefined都会转换为false
+             *      -   Infinity会转换为true
+             *      - 对象也会转换为true
+             * 
+            */
+            a = 123;
+            a = Boolean(a);
+
+            a = NaN;
+            a = Boolean(a);
+
+            a = 0;
+            a = Boolean(a);
+
+            a = "";
+            a = Boolean(a);
+
+            a = Infinity;
+            a = Boolean(a);
+            console.log(typeof a);
+            console.log(a);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

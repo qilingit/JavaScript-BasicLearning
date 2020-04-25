@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script type="text/javascript">
+            /**
+             * 函数的返回值可以是任意的数据类型
+             *  可以是一个对象，也可以是一个函数
+            */
+           function fun2() {
+               return {name: "沙河尚"};
+           }
+
+           var a = fun2();
+
+           function fun3() {
+               function fun4() {
+                   alert("我是fun4");
+               }
+
+               return fun4;
+           }
+           a = fun3();
+           //输出fun4的函数体
+           console.log(a);
+           //相当于调用fun4();
+           //a();
+           fun3()();
+        </script>
+    </head>
+</html>

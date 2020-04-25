@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script type="text/javascript">
+            /**
+             * 在函数中，如果要访问全局作用域的变量，可以用windows.全局变量名
+            */
+           var a = "我是全局作用域变量";
+
+           function fun(){
+               var a = "我是函数作用域变量";
+               console.log(a);
+               console.log(window.a);
+           }
+
+           //fun();
+
+           /**
+            * 在函数作用域中也有声明提前的特性
+            *   使用var关键字声明的变量，会在函数中所有的代码执行之前被
+           */
+            function fun3() {
+                console.log(a);
+                var a = 35;
+            }
+            //输出undefined
+            fun3();
+        </script>
+    </head>
+    <body></body>
+</html>

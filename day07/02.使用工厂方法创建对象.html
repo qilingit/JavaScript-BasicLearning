@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script type="text/javascript">
+            /**
+                创建一个对象
+            */
+            var obj = {
+                name: "孙悟空",
+                age: 18,
+                gender: "男",
+                sayName: function(){
+                    console.log(this.name);
+                }
+            }
+
+            // 如果要创建有别的名字的obj，比如猪八戒，沙僧，需要复制代码，如果解决？
+            // 可以用工厂方法创建对象
+            function createPerson(name, age, gender) {
+                return {
+                    name: name,
+                    age: age, 
+                    gender: gender,
+                    sayName: function(){
+                        console.log(this.name);
+                    } 
+                }
+            }
+
+            var obj1 = createPerson("孙悟空", 18, "男");
+            var obj2 =createPerson("猪八戒", 28, "男");
+            var obj3 =createPerson("沙僧", 26, "男");
+            console.log(obj1);
+            console.log(obj2);
+            console.log(obj3);
+            obj2.sayName(); 
+
+        </script>
+    </head>
+</html>
